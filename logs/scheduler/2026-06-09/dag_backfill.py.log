@@ -1,0 +1,11 @@
+[2026-06-09T20:27:17.009+0000] {processor.py:161} INFO - Started process (PID=67) to work on /opt/airflow/dags/dag_backfill.py
+[2026-06-09T20:27:17.010+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_backfill.py for tasks to queue
+[2026-06-09T20:27:17.025+0000] {logging_mixin.py:188} INFO - [2026-06-09T20:27:17.025+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_backfill.py
+[2026-06-09T20:27:17.402+0000] {processor.py:840} INFO - DAG(s) 'dag_backfill' retrieved from /opt/airflow/dags/dag_backfill.py
+[2026-06-09T20:27:20.109+0000] {logging_mixin.py:188} INFO - [2026-06-09T20:27:20.105+0000] {override.py:1829} INFO - Created Permission View: can edit on DAG:dag_backfill
+[2026-06-09T20:27:20.173+0000] {logging_mixin.py:188} INFO - [2026-06-09T20:27:20.170+0000] {override.py:1829} INFO - Created Permission View: can read on DAG:dag_backfill
+[2026-06-09T20:27:20.202+0000] {logging_mixin.py:188} INFO - [2026-06-09T20:27:20.198+0000] {override.py:1829} INFO - Created Permission View: can delete on DAG:dag_backfill
+[2026-06-09T20:27:20.203+0000] {logging_mixin.py:188} INFO - [2026-06-09T20:27:20.203+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-09T20:27:20.270+0000] {logging_mixin.py:188} INFO - [2026-06-09T20:27:20.270+0000] {dag.py:3118} INFO - Creating ORM DAG for dag_backfill
+[2026-06-09T20:27:20.278+0000] {logging_mixin.py:188} INFO - [2026-06-09T20:27:20.273+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_backfill to None, run_after=None
+[2026-06-09T20:27:20.395+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_backfill.py took 3.442 seconds
