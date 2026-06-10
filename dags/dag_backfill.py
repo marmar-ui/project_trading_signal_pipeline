@@ -1,9 +1,11 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
+from google.cloud import storage
 import requests
 import json
 import os
+import pandas as pd
 
 COINS = [
     "BTCUSDT", "ETHUSDT", "BNBUSDT", "XRPUSDT", "SOLUSDT",
@@ -12,7 +14,15 @@ COINS = [
 
 BINANCE_URL = "https://api.binance.com/api/v3/klines"
 STAGING_PATH = "/tmp/staging"
-LIMIT_PER_REQUEST = 1000
+GCS_BUCKET = "crypto-trading-signal-pipeline"
+GCS_BRONZE_PATH = "bronze/ohlcv"
+CREDENTIALS_PATH = "/opt/airflow/config/gcp-credentials.json"
+
+COLUMNS = [
+    "open_time", "open", "high", "low", "close", "volume",
+    "close_time", "quote_volume", "num_trades",
+    "taker_buy_base", "taker_buy_quote", "ignore"
+]
 
 default_args = {
     "owner": "airflow",
@@ -23,7 +33,6 @@ default_args = {
 def fetch_backfill(**context):
     os.makedirs(STAGING_PATH, exist_ok=True)
 
-    # Ambil parameter dari DAG run config
     end_time = datetime.utcnow()
     start_time = end_time - timedelta(days=365)
 
@@ -40,7 +49,7 @@ def fetch_backfill(**context):
                 "interval": "1h",
                 "startTime": current_start,
                 "endTime": end_ms,
-                "limit": LIMIT_PER_REQUEST
+                "limit": 1000
             }
             response = requests.get(BINANCE_URL, params=params)
             batch = response.json()
@@ -49,17 +58,45 @@ def fetch_backfill(**context):
                 break
 
             all_data.extend(batch)
-            # Geser start ke candle terakhir + 1 jam
             current_start = batch[-1][0] + 3600000
-
             print(f"{symbol}: fetched {len(all_data)} candles so far")
 
         timestamp_str = datetime.utcnow().strftime("%Y%m%d_%H%M")
-        filename = f"{STAGING_PATH}/{symbol}backfill{timestamp_str}.json"
+        filename = f"{STAGING_PATH}/{symbol}_backfill_{timestamp_str}.json"
         with open(filename, "w") as f:
             json.dump(all_data, f)
 
-        print(f"{symbol}: total {len(all_data)} candles saved")
+        print(f"{symbol}: total {len(all_data)} candles saved to staging")
+
+
+def upload_to_bronze(**context):
+    client = storage.Client.from_service_account_json(CREDENTIALS_PATH)
+    bucket = client.bucket(GCS_BUCKET)
+
+    for filename in os.listdir(STAGING_PATH):
+        if not filename.endswith(".json"):
+            continue
+
+        local_path = f"{STAGING_PATH}/{filename}"
+
+        with open(local_path, "r") as f:
+            data = json.load(f)
+
+        df = pd.DataFrame(data, columns=COLUMNS)
+
+        parquet_filename = filename.replace(".json", ".parquet")
+        parquet_path = f"{STAGING_PATH}/{parquet_filename}"
+        df.to_parquet(parquet_path, index=False)
+
+        gcs_path = f"{GCS_BRONZE_PATH}/{parquet_filename}"
+        blob = bucket.blob(gcs_path)
+        blob.upload_from_filename(parquet_path)
+        print(f"Uploaded {parquet_filename} to gs://{GCS_BUCKET}/{gcs_path}")
+
+        os.remove(local_path)
+        os.remove(parquet_path)
+        print(f"Deleted staging files: {filename}, {parquet_filename}")
+
 
 with DAG(
     dag_id="dag_backfill",
@@ -71,7 +108,14 @@ with DAG(
     tags=["binance", "backfill"],
 ) as dag:
 
-    backfill_task = PythonOperator(
+    fetch_task = PythonOperator(
         task_id="fetch_backfill",
         python_callable=fetch_backfill,
     )
+
+    upload_task = PythonOperator(
+        task_id="upload_to_bronze",
+        python_callable=upload_to_bronze,
+    )
+
+    fetch_task >> upload_task
