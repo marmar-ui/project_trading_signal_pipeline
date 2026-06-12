@@ -1,0 +1,60 @@
+[2026-06-11T22:20:54.993+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-06-11T22:20:55.057+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_backfill.upload_to_bronze manual__2026-06-11T22:20:28.701278+00:00 [queued]>
+[2026-06-11T22:20:55.083+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_backfill.upload_to_bronze manual__2026-06-11T22:20:28.701278+00:00 [queued]>
+[2026-06-11T22:20:55.085+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 4
+[2026-06-11T22:20:55.136+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): upload_to_bronze> on 2026-06-11 22:20:28.701278+00:00
+[2026-06-11T22:20:55.158+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=238) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-06-11T22:20:55.170+0000] {standard_task_runner.py:63} INFO - Started process 247 to run task
+[2026-06-11T22:20:55.167+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dag_backfill', 'upload_to_bronze', 'manual__2026-06-11T22:20:28.701278+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/dag_backfill.py', '--cfg-path', '/tmp/tmp9ou3e7eo']
+[2026-06-11T22:20:55.172+0000] {standard_task_runner.py:91} INFO - Job 17: Subtask upload_to_bronze
+[2026-06-11T22:20:55.270+0000] {task_command.py:426} INFO - Running <TaskInstance: dag_backfill.upload_to_bronze manual__2026-06-11T22:20:28.701278+00:00 [running]> on host 1fca64daf2a8
+[2026-06-11T22:20:55.428+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dag_backfill' AIRFLOW_CTX_TASK_ID='upload_to_bronze' AIRFLOW_CTX_EXECUTION_DATE='2026-06-11T22:20:28.701278+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-06-11T22:20:28.701278+00:00'
+[2026-06-11T22:20:55.434+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-06-11T22:20:55.911+0000] {logging_mixin.py:188} INFO - Downloaded ADAUSDT_backfill_20260611_2220.json from staging
+[2026-06-11T22:20:56.715+0000] {logging_mixin.py:188} INFO - Uploaded ADAUSDT_backfill_20260611_2220.parquet to gs://crypto-trading-signal-pipeline/bronze/ohlcv/ADAUSDT_backfill_20260611_2220.parquet
+[2026-06-11T22:20:56.793+0000] {logging_mixin.py:188} INFO - Deleted staging file: staging/ohlcv/ADAUSDT_backfill_20260611_2220.json
+[2026-06-11T22:20:56.794+0000] {logging_mixin.py:188} INFO - Cleaned up local temp: ADAUSDT_backfill_20260611_2220.json, ADAUSDT_backfill_20260611_2220.parquet
+[2026-06-11T22:20:56.984+0000] {logging_mixin.py:188} INFO - Downloaded AVAXUSDT_backfill_20260611_2220.json from staging
+[2026-06-11T22:20:57.484+0000] {logging_mixin.py:188} INFO - Uploaded AVAXUSDT_backfill_20260611_2220.parquet to gs://crypto-trading-signal-pipeline/bronze/ohlcv/AVAXUSDT_backfill_20260611_2220.parquet
+[2026-06-11T22:20:57.557+0000] {logging_mixin.py:188} INFO - Deleted staging file: staging/ohlcv/AVAXUSDT_backfill_20260611_2220.json
+[2026-06-11T22:20:57.564+0000] {logging_mixin.py:188} INFO - Cleaned up local temp: AVAXUSDT_backfill_20260611_2220.json, AVAXUSDT_backfill_20260611_2220.parquet
+[2026-06-11T22:20:57.771+0000] {logging_mixin.py:188} INFO - Downloaded BNBUSDT_backfill_20260611_2220.json from staging
+[2026-06-11T22:20:58.117+0000] {logging_mixin.py:188} INFO - Uploaded BNBUSDT_backfill_20260611_2220.parquet to gs://crypto-trading-signal-pipeline/bronze/ohlcv/BNBUSDT_backfill_20260611_2220.parquet
+[2026-06-11T22:20:58.175+0000] {logging_mixin.py:188} INFO - Deleted staging file: staging/ohlcv/BNBUSDT_backfill_20260611_2220.json
+[2026-06-11T22:20:58.178+0000] {logging_mixin.py:188} INFO - Cleaned up local temp: BNBUSDT_backfill_20260611_2220.json, BNBUSDT_backfill_20260611_2220.parquet
+[2026-06-11T22:20:58.375+0000] {logging_mixin.py:188} INFO - Downloaded BTCUSDT_backfill_20260611_2220.json from staging
+[2026-06-11T22:20:58.760+0000] {logging_mixin.py:188} INFO - Uploaded BTCUSDT_backfill_20260611_2220.parquet to gs://crypto-trading-signal-pipeline/bronze/ohlcv/BTCUSDT_backfill_20260611_2220.parquet
+[2026-06-11T22:20:58.812+0000] {logging_mixin.py:188} INFO - Deleted staging file: staging/ohlcv/BTCUSDT_backfill_20260611_2220.json
+[2026-06-11T22:20:58.815+0000] {logging_mixin.py:188} INFO - Cleaned up local temp: BTCUSDT_backfill_20260611_2220.json, BTCUSDT_backfill_20260611_2220.parquet
+[2026-06-11T22:20:58.996+0000] {logging_mixin.py:188} INFO - Downloaded DOGEUSDT_backfill_20260611_2220.json from staging
+[2026-06-11T22:20:59.408+0000] {logging_mixin.py:188} INFO - Uploaded DOGEUSDT_backfill_20260611_2220.parquet to gs://crypto-trading-signal-pipeline/bronze/ohlcv/DOGEUSDT_backfill_20260611_2220.parquet
+[2026-06-11T22:20:59.468+0000] {logging_mixin.py:188} INFO - Deleted staging file: staging/ohlcv/DOGEUSDT_backfill_20260611_2220.json
+[2026-06-11T22:20:59.473+0000] {logging_mixin.py:188} INFO - Cleaned up local temp: DOGEUSDT_backfill_20260611_2220.json, DOGEUSDT_backfill_20260611_2220.parquet
+[2026-06-11T22:20:59.639+0000] {logging_mixin.py:188} INFO - Downloaded ETHUSDT_backfill_20260611_2220.json from staging
+[2026-06-11T22:21:00.050+0000] {logging_mixin.py:188} INFO - Uploaded ETHUSDT_backfill_20260611_2220.parquet to gs://crypto-trading-signal-pipeline/bronze/ohlcv/ETHUSDT_backfill_20260611_2220.parquet
+[2026-06-11T22:21:00.102+0000] {logging_mixin.py:188} INFO - Deleted staging file: staging/ohlcv/ETHUSDT_backfill_20260611_2220.json
+[2026-06-11T22:21:00.106+0000] {logging_mixin.py:188} INFO - Cleaned up local temp: ETHUSDT_backfill_20260611_2220.json, ETHUSDT_backfill_20260611_2220.parquet
+[2026-06-11T22:21:00.285+0000] {logging_mixin.py:188} INFO - Downloaded LINKUSDT_backfill_20260611_2220.json from staging
+[2026-06-11T22:21:00.567+0000] {logging_mixin.py:188} INFO - Uploaded LINKUSDT_backfill_20260611_2220.parquet to gs://crypto-trading-signal-pipeline/bronze/ohlcv/LINKUSDT_backfill_20260611_2220.parquet
+[2026-06-11T22:21:00.620+0000] {logging_mixin.py:188} INFO - Deleted staging file: staging/ohlcv/LINKUSDT_backfill_20260611_2220.json
+[2026-06-11T22:21:00.621+0000] {logging_mixin.py:188} INFO - Cleaned up local temp: LINKUSDT_backfill_20260611_2220.json, LINKUSDT_backfill_20260611_2220.parquet
+[2026-06-11T22:21:00.779+0000] {logging_mixin.py:188} INFO - Downloaded LTCUSDT_backfill_20260611_2220.json from staging
+[2026-06-11T22:21:00.998+0000] {logging_mixin.py:188} INFO - Uploaded LTCUSDT_backfill_20260611_2220.parquet to gs://crypto-trading-signal-pipeline/bronze/ohlcv/LTCUSDT_backfill_20260611_2220.parquet
+[2026-06-11T22:21:01.047+0000] {logging_mixin.py:188} INFO - Deleted staging file: staging/ohlcv/LTCUSDT_backfill_20260611_2220.json
+[2026-06-11T22:21:01.048+0000] {logging_mixin.py:188} INFO - Cleaned up local temp: LTCUSDT_backfill_20260611_2220.json, LTCUSDT_backfill_20260611_2220.parquet
+[2026-06-11T22:21:01.194+0000] {logging_mixin.py:188} INFO - Downloaded SOLUSDT_backfill_20260611_2220.json from staging
+[2026-06-11T22:21:01.470+0000] {logging_mixin.py:188} INFO - Uploaded SOLUSDT_backfill_20260611_2220.parquet to gs://crypto-trading-signal-pipeline/bronze/ohlcv/SOLUSDT_backfill_20260611_2220.parquet
+[2026-06-11T22:21:01.527+0000] {logging_mixin.py:188} INFO - Deleted staging file: staging/ohlcv/SOLUSDT_backfill_20260611_2220.json
+[2026-06-11T22:21:01.528+0000] {logging_mixin.py:188} INFO - Cleaned up local temp: SOLUSDT_backfill_20260611_2220.json, SOLUSDT_backfill_20260611_2220.parquet
+[2026-06-11T22:21:01.681+0000] {logging_mixin.py:188} INFO - Downloaded XRPUSDT_backfill_20260611_2220.json from staging
+[2026-06-11T22:21:01.995+0000] {logging_mixin.py:188} INFO - Uploaded XRPUSDT_backfill_20260611_2220.parquet to gs://crypto-trading-signal-pipeline/bronze/ohlcv/XRPUSDT_backfill_20260611_2220.parquet
+[2026-06-11T22:21:02.045+0000] {logging_mixin.py:188} INFO - Deleted staging file: staging/ohlcv/XRPUSDT_backfill_20260611_2220.json
+[2026-06-11T22:21:02.046+0000] {logging_mixin.py:188} INFO - Cleaned up local temp: XRPUSDT_backfill_20260611_2220.json, XRPUSDT_backfill_20260611_2220.parquet
+[2026-06-11T22:21:02.050+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-06-11T22:21:02.050+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-06-11T22:21:02.058+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=dag_backfill, task_id=upload_to_bronze, run_id=manual__2026-06-11T22:20:28.701278+00:00, execution_date=20260611T222028, start_date=20260611T222055, end_date=20260611T222102
+[2026-06-11T22:21:02.118+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-06-11T22:21:02.133+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-06-11T22:21:02.136+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

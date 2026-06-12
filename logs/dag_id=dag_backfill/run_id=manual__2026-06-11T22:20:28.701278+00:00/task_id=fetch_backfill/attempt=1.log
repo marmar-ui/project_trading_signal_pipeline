@@ -1,0 +1,130 @@
+[2026-06-11T22:20:33.102+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-06-11T22:20:33.268+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_backfill.fetch_backfill manual__2026-06-11T22:20:28.701278+00:00 [queued]>
+[2026-06-11T22:20:33.285+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_backfill.fetch_backfill manual__2026-06-11T22:20:28.701278+00:00 [queued]>
+[2026-06-11T22:20:33.285+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 4
+[2026-06-11T22:20:33.316+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): fetch_backfill> on 2026-06-11 22:20:28.701278+00:00
+[2026-06-11T22:20:33.332+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=235) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-06-11T22:20:33.336+0000] {standard_task_runner.py:63} INFO - Started process 237 to run task
+[2026-06-11T22:20:33.336+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dag_backfill', 'fetch_backfill', 'manual__2026-06-11T22:20:28.701278+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/dag_backfill.py', '--cfg-path', '/tmp/tmp23e_mrft']
+[2026-06-11T22:20:33.339+0000] {standard_task_runner.py:91} INFO - Job 16: Subtask fetch_backfill
+[2026-06-11T22:20:33.420+0000] {task_command.py:426} INFO - Running <TaskInstance: dag_backfill.fetch_backfill manual__2026-06-11T22:20:28.701278+00:00 [running]> on host 1fca64daf2a8
+[2026-06-11T22:20:33.537+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dag_backfill' AIRFLOW_CTX_TASK_ID='fetch_backfill' AIRFLOW_CTX_EXECUTION_DATE='2026-06-11T22:20:28.701278+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-06-11T22:20:28.701278+00:00'
+[2026-06-11T22:20:33.538+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-06-11T22:20:34.068+0000] {logging_mixin.py:188} INFO - BTCUSDT: fetched 1000 candles so far
+[2026-06-11T22:20:34.399+0000] {logging_mixin.py:188} INFO - BTCUSDT: fetched 2000 candles so far
+[2026-06-11T22:20:34.813+0000] {logging_mixin.py:188} INFO - BTCUSDT: fetched 3000 candles so far
+[2026-06-11T22:20:35.073+0000] {logging_mixin.py:188} INFO - BTCUSDT: fetched 4000 candles so far
+[2026-06-11T22:20:35.241+0000] {logging_mixin.py:188} INFO - BTCUSDT: fetched 5000 candles so far
+[2026-06-11T22:20:35.452+0000] {logging_mixin.py:188} INFO - BTCUSDT: fetched 6000 candles so far
+[2026-06-11T22:20:35.691+0000] {logging_mixin.py:188} INFO - BTCUSDT: fetched 7000 candles so far
+[2026-06-11T22:20:35.817+0000] {logging_mixin.py:188} INFO - BTCUSDT: fetched 8000 candles so far
+[2026-06-11T22:20:35.964+0000] {logging_mixin.py:188} INFO - BTCUSDT: fetched 8760 candles so far
+[2026-06-11T22:20:36.414+0000] {logging_mixin.py:188} INFO - BTCUSDT: uploaded to gs://crypto-trading-signal-pipeline/staging/ohlcv/BTCUSDT_backfill_20260611_2220.json
+[2026-06-11T22:20:36.415+0000] {logging_mixin.py:188} INFO - BTCUSDT: total 8760 candles, staging done
+[2026-06-11T22:20:36.616+0000] {logging_mixin.py:188} INFO - ETHUSDT: fetched 1000 candles so far
+[2026-06-11T22:20:36.871+0000] {logging_mixin.py:188} INFO - ETHUSDT: fetched 2000 candles so far
+[2026-06-11T22:20:36.994+0000] {logging_mixin.py:188} INFO - ETHUSDT: fetched 3000 candles so far
+[2026-06-11T22:20:37.139+0000] {logging_mixin.py:188} INFO - ETHUSDT: fetched 4000 candles so far
+[2026-06-11T22:20:37.328+0000] {logging_mixin.py:188} INFO - ETHUSDT: fetched 5000 candles so far
+[2026-06-11T22:20:37.699+0000] {logging_mixin.py:188} INFO - ETHUSDT: fetched 6000 candles so far
+[2026-06-11T22:20:37.938+0000] {logging_mixin.py:188} INFO - ETHUSDT: fetched 7000 candles so far
+[2026-06-11T22:20:38.158+0000] {logging_mixin.py:188} INFO - ETHUSDT: fetched 8000 candles so far
+[2026-06-11T22:20:38.276+0000] {logging_mixin.py:188} INFO - ETHUSDT: fetched 8760 candles so far
+[2026-06-11T22:20:38.585+0000] {logging_mixin.py:188} INFO - ETHUSDT: uploaded to gs://crypto-trading-signal-pipeline/staging/ohlcv/ETHUSDT_backfill_20260611_2220.json
+[2026-06-11T22:20:38.585+0000] {logging_mixin.py:188} INFO - ETHUSDT: total 8760 candles, staging done
+[2026-06-11T22:20:38.709+0000] {logging_mixin.py:188} INFO - BNBUSDT: fetched 1000 candles so far
+[2026-06-11T22:20:38.836+0000] {logging_mixin.py:188} INFO - BNBUSDT: fetched 2000 candles so far
+[2026-06-11T22:20:38.985+0000] {logging_mixin.py:188} INFO - BNBUSDT: fetched 3000 candles so far
+[2026-06-11T22:20:39.110+0000] {logging_mixin.py:188} INFO - BNBUSDT: fetched 4000 candles so far
+[2026-06-11T22:20:39.300+0000] {logging_mixin.py:188} INFO - BNBUSDT: fetched 5000 candles so far
+[2026-06-11T22:20:39.493+0000] {logging_mixin.py:188} INFO - BNBUSDT: fetched 6000 candles so far
+[2026-06-11T22:20:39.635+0000] {logging_mixin.py:188} INFO - BNBUSDT: fetched 7000 candles so far
+[2026-06-11T22:20:39.861+0000] {logging_mixin.py:188} INFO - BNBUSDT: fetched 8000 candles so far
+[2026-06-11T22:20:39.993+0000] {logging_mixin.py:188} INFO - BNBUSDT: fetched 8760 candles so far
+[2026-06-11T22:20:40.242+0000] {logging_mixin.py:188} INFO - BNBUSDT: uploaded to gs://crypto-trading-signal-pipeline/staging/ohlcv/BNBUSDT_backfill_20260611_2220.json
+[2026-06-11T22:20:40.243+0000] {logging_mixin.py:188} INFO - BNBUSDT: total 8760 candles, staging done
+[2026-06-11T22:20:40.376+0000] {logging_mixin.py:188} INFO - XRPUSDT: fetched 1000 candles so far
+[2026-06-11T22:20:40.558+0000] {logging_mixin.py:188} INFO - XRPUSDT: fetched 2000 candles so far
+[2026-06-11T22:20:40.682+0000] {logging_mixin.py:188} INFO - XRPUSDT: fetched 3000 candles so far
+[2026-06-11T22:20:40.805+0000] {logging_mixin.py:188} INFO - XRPUSDT: fetched 4000 candles so far
+[2026-06-11T22:20:40.929+0000] {logging_mixin.py:188} INFO - XRPUSDT: fetched 5000 candles so far
+[2026-06-11T22:20:41.061+0000] {logging_mixin.py:188} INFO - XRPUSDT: fetched 6000 candles so far
+[2026-06-11T22:20:41.193+0000] {logging_mixin.py:188} INFO - XRPUSDT: fetched 7000 candles so far
+[2026-06-11T22:20:41.330+0000] {logging_mixin.py:188} INFO - XRPUSDT: fetched 8000 candles so far
+[2026-06-11T22:20:41.532+0000] {logging_mixin.py:188} INFO - XRPUSDT: fetched 8760 candles so far
+[2026-06-11T22:20:41.817+0000] {logging_mixin.py:188} INFO - XRPUSDT: uploaded to gs://crypto-trading-signal-pipeline/staging/ohlcv/XRPUSDT_backfill_20260611_2220.json
+[2026-06-11T22:20:41.818+0000] {logging_mixin.py:188} INFO - XRPUSDT: total 8760 candles, staging done
+[2026-06-11T22:20:41.942+0000] {logging_mixin.py:188} INFO - SOLUSDT: fetched 1000 candles so far
+[2026-06-11T22:20:42.145+0000] {logging_mixin.py:188} INFO - SOLUSDT: fetched 2000 candles so far
+[2026-06-11T22:20:42.282+0000] {logging_mixin.py:188} INFO - SOLUSDT: fetched 3000 candles so far
+[2026-06-11T22:20:42.409+0000] {logging_mixin.py:188} INFO - SOLUSDT: fetched 4000 candles so far
+[2026-06-11T22:20:42.574+0000] {logging_mixin.py:188} INFO - SOLUSDT: fetched 5000 candles so far
+[2026-06-11T22:20:42.947+0000] {logging_mixin.py:188} INFO - SOLUSDT: fetched 6000 candles so far
+[2026-06-11T22:20:43.070+0000] {logging_mixin.py:188} INFO - SOLUSDT: fetched 7000 candles so far
+[2026-06-11T22:20:43.200+0000] {logging_mixin.py:188} INFO - SOLUSDT: fetched 8000 candles so far
+[2026-06-11T22:20:43.336+0000] {logging_mixin.py:188} INFO - SOLUSDT: fetched 8760 candles so far
+[2026-06-11T22:20:43.707+0000] {logging_mixin.py:188} INFO - SOLUSDT: uploaded to gs://crypto-trading-signal-pipeline/staging/ohlcv/SOLUSDT_backfill_20260611_2220.json
+[2026-06-11T22:20:43.708+0000] {logging_mixin.py:188} INFO - SOLUSDT: total 8760 candles, staging done
+[2026-06-11T22:20:43.903+0000] {logging_mixin.py:188} INFO - DOGEUSDT: fetched 1000 candles so far
+[2026-06-11T22:20:44.029+0000] {logging_mixin.py:188} INFO - DOGEUSDT: fetched 2000 candles so far
+[2026-06-11T22:20:44.165+0000] {logging_mixin.py:188} INFO - DOGEUSDT: fetched 3000 candles so far
+[2026-06-11T22:20:44.298+0000] {logging_mixin.py:188} INFO - DOGEUSDT: fetched 4000 candles so far
+[2026-06-11T22:20:44.421+0000] {logging_mixin.py:188} INFO - DOGEUSDT: fetched 5000 candles so far
+[2026-06-11T22:20:44.552+0000] {logging_mixin.py:188} INFO - DOGEUSDT: fetched 6000 candles so far
+[2026-06-11T22:20:44.674+0000] {logging_mixin.py:188} INFO - DOGEUSDT: fetched 7000 candles so far
+[2026-06-11T22:20:44.801+0000] {logging_mixin.py:188} INFO - DOGEUSDT: fetched 8000 candles so far
+[2026-06-11T22:20:44.921+0000] {logging_mixin.py:188} INFO - DOGEUSDT: fetched 8760 candles so far
+[2026-06-11T22:20:45.171+0000] {logging_mixin.py:188} INFO - DOGEUSDT: uploaded to gs://crypto-trading-signal-pipeline/staging/ohlcv/DOGEUSDT_backfill_20260611_2220.json
+[2026-06-11T22:20:45.172+0000] {logging_mixin.py:188} INFO - DOGEUSDT: total 8760 candles, staging done
+[2026-06-11T22:20:45.298+0000] {logging_mixin.py:188} INFO - AVAXUSDT: fetched 1000 candles so far
+[2026-06-11T22:20:45.439+0000] {logging_mixin.py:188} INFO - AVAXUSDT: fetched 2000 candles so far
+[2026-06-11T22:20:45.703+0000] {logging_mixin.py:188} INFO - AVAXUSDT: fetched 3000 candles so far
+[2026-06-11T22:20:45.855+0000] {logging_mixin.py:188} INFO - AVAXUSDT: fetched 4000 candles so far
+[2026-06-11T22:20:46.048+0000] {logging_mixin.py:188} INFO - AVAXUSDT: fetched 5000 candles so far
+[2026-06-11T22:20:46.172+0000] {logging_mixin.py:188} INFO - AVAXUSDT: fetched 6000 candles so far
+[2026-06-11T22:20:46.295+0000] {logging_mixin.py:188} INFO - AVAXUSDT: fetched 7000 candles so far
+[2026-06-11T22:20:46.416+0000] {logging_mixin.py:188} INFO - AVAXUSDT: fetched 8000 candles so far
+[2026-06-11T22:20:46.577+0000] {logging_mixin.py:188} INFO - AVAXUSDT: fetched 8760 candles so far
+[2026-06-11T22:20:46.855+0000] {logging_mixin.py:188} INFO - AVAXUSDT: uploaded to gs://crypto-trading-signal-pipeline/staging/ohlcv/AVAXUSDT_backfill_20260611_2220.json
+[2026-06-11T22:20:46.858+0000] {logging_mixin.py:188} INFO - AVAXUSDT: total 8760 candles, staging done
+[2026-06-11T22:20:47.106+0000] {logging_mixin.py:188} INFO - LINKUSDT: fetched 1000 candles so far
+[2026-06-11T22:20:47.354+0000] {logging_mixin.py:188} INFO - LINKUSDT: fetched 2000 candles so far
+[2026-06-11T22:20:47.544+0000] {logging_mixin.py:188} INFO - LINKUSDT: fetched 3000 candles so far
+[2026-06-11T22:20:47.671+0000] {logging_mixin.py:188} INFO - LINKUSDT: fetched 4000 candles so far
+[2026-06-11T22:20:47.794+0000] {logging_mixin.py:188} INFO - LINKUSDT: fetched 5000 candles so far
+[2026-06-11T22:20:48.062+0000] {logging_mixin.py:188} INFO - LINKUSDT: fetched 6000 candles so far
+[2026-06-11T22:20:48.251+0000] {logging_mixin.py:188} INFO - LINKUSDT: fetched 7000 candles so far
+[2026-06-11T22:20:48.373+0000] {logging_mixin.py:188} INFO - LINKUSDT: fetched 8000 candles so far
+[2026-06-11T22:20:48.577+0000] {logging_mixin.py:188} INFO - LINKUSDT: fetched 8760 candles so far
+[2026-06-11T22:20:48.978+0000] {logging_mixin.py:188} INFO - LINKUSDT: uploaded to gs://crypto-trading-signal-pipeline/staging/ohlcv/LINKUSDT_backfill_20260611_2220.json
+[2026-06-11T22:20:48.982+0000] {logging_mixin.py:188} INFO - LINKUSDT: total 8760 candles, staging done
+[2026-06-11T22:20:49.172+0000] {logging_mixin.py:188} INFO - ADAUSDT: fetched 1000 candles so far
+[2026-06-11T22:20:49.354+0000] {logging_mixin.py:188} INFO - ADAUSDT: fetched 2000 candles so far
+[2026-06-11T22:20:49.539+0000] {logging_mixin.py:188} INFO - ADAUSDT: fetched 3000 candles so far
+[2026-06-11T22:20:49.768+0000] {logging_mixin.py:188} INFO - ADAUSDT: fetched 4000 candles so far
+[2026-06-11T22:20:49.902+0000] {logging_mixin.py:188} INFO - ADAUSDT: fetched 5000 candles so far
+[2026-06-11T22:20:50.029+0000] {logging_mixin.py:188} INFO - ADAUSDT: fetched 6000 candles so far
+[2026-06-11T22:20:50.156+0000] {logging_mixin.py:188} INFO - ADAUSDT: fetched 7000 candles so far
+[2026-06-11T22:20:50.279+0000] {logging_mixin.py:188} INFO - ADAUSDT: fetched 8000 candles so far
+[2026-06-11T22:20:50.402+0000] {logging_mixin.py:188} INFO - ADAUSDT: fetched 8760 candles so far
+[2026-06-11T22:20:50.683+0000] {logging_mixin.py:188} INFO - ADAUSDT: uploaded to gs://crypto-trading-signal-pipeline/staging/ohlcv/ADAUSDT_backfill_20260611_2220.json
+[2026-06-11T22:20:50.685+0000] {logging_mixin.py:188} INFO - ADAUSDT: total 8760 candles, staging done
+[2026-06-11T22:20:50.845+0000] {logging_mixin.py:188} INFO - LTCUSDT: fetched 1000 candles so far
+[2026-06-11T22:20:51.040+0000] {logging_mixin.py:188} INFO - LTCUSDT: fetched 2000 candles so far
+[2026-06-11T22:20:51.165+0000] {logging_mixin.py:188} INFO - LTCUSDT: fetched 3000 candles so far
+[2026-06-11T22:20:51.321+0000] {logging_mixin.py:188} INFO - LTCUSDT: fetched 4000 candles so far
+[2026-06-11T22:20:51.545+0000] {logging_mixin.py:188} INFO - LTCUSDT: fetched 5000 candles so far
+[2026-06-11T22:20:51.679+0000] {logging_mixin.py:188} INFO - LTCUSDT: fetched 6000 candles so far
+[2026-06-11T22:20:52.134+0000] {logging_mixin.py:188} INFO - LTCUSDT: fetched 7000 candles so far
+[2026-06-11T22:20:52.310+0000] {logging_mixin.py:188} INFO - LTCUSDT: fetched 8000 candles so far
+[2026-06-11T22:20:52.452+0000] {logging_mixin.py:188} INFO - LTCUSDT: fetched 8760 candles so far
+[2026-06-11T22:20:52.724+0000] {logging_mixin.py:188} INFO - LTCUSDT: uploaded to gs://crypto-trading-signal-pipeline/staging/ohlcv/LTCUSDT_backfill_20260611_2220.json
+[2026-06-11T22:20:52.725+0000] {logging_mixin.py:188} INFO - LTCUSDT: total 8760 candles, staging done
+[2026-06-11T22:20:52.728+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-06-11T22:20:52.729+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-06-11T22:20:52.736+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=dag_backfill, task_id=fetch_backfill, run_id=manual__2026-06-11T22:20:28.701278+00:00, execution_date=20260611T222028, start_date=20260611T222033, end_date=20260611T222052
+[2026-06-11T22:20:52.775+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-06-11T22:20:52.791+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-06-11T22:20:52.792+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

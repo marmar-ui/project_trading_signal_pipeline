@@ -1,0 +1,31 @@
+[0m22:16:09.282655 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7306b68ab440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7306b73a3ce0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7306b74cf380>]}
+
+
+============================== 22:16:09.293292 | 3be59e94-9144-4892-b3b3-797e32077fa5 ==============================
+[0m22:16:09.293292 [info ] [MainThread]: Running with dbt=1.11.11
+[0m22:16:09.294611 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'target_path': 'None', 'printer_width': '80', 'fail_fast': 'False', 'log_format': 'default', 'partial_parse': 'True', 'introspect': 'True', 'no_print': 'None', 'quiet': 'False', 'version_check': 'True', 'log_path': 'logs', 'cache_selected_only': 'False', 'write_json': 'True', 'invocation_command': 'dbt init crypto_trading', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'debug': 'False', 'profiles_dir': '/home/codespace/.dbt', 'log_cache_events': 'False', 'use_colors': 'True', 'warn_error': 'None'}
+[0m22:16:09.323400 [info ] [MainThread]: Creating dbt configuration folder at /home/codespace/.dbt
+[0m22:16:09.327219 [debug] [MainThread]: Starter project path: /usr/local/python/3.12.1/lib/python3.12/site-packages/dbt/include/starter_project
+[0m22:16:09.368367 [info ] [MainThread]: 
+Your new dbt project "crypto_trading" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m22:16:09.369383 [info ] [MainThread]: Setting up your profile.
+[0m22:20:37.721703 [info ] [MainThread]: Profile crypto_trading written to /home/codespace/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m22:20:37.725471 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 268.527, "process_in_blocks": "92768", "process_kernel_time": 0.557828, "process_mem_max_rss": "232584", "process_out_blocks": "80", "process_user_time": 5.649335}
+[0m22:20:37.727829 [debug] [MainThread]: Command `dbt init` succeeded at 22:20:37.727673 after 268.53 seconds
+[0m22:20:37.728537 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7306b73a3ce0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7306a47b5070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7306a47e9460>]}
+[0m22:20:37.729310 [debug] [MainThread]: Flushing usage events
+[0m22:20:38.741605 [debug] [MainThread]: An error was encountered while trying to flush usage events

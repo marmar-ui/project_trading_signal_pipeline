@@ -1,0 +1,43 @@
+[2026-06-12T22:09:34.705+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-06-12T22:09:34.987+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_incremental.fetch_incremental scheduled__2026-06-12T21:00:00+00:00 [queued]>
+[2026-06-12T22:09:35.060+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_incremental.fetch_incremental scheduled__2026-06-12T21:00:00+00:00 [queued]>
+[2026-06-12T22:09:35.063+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 4
+[2026-06-12T22:09:35.222+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): fetch_incremental> on 2026-06-12 21:00:00+00:00
+[2026-06-12T22:09:35.337+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=81) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-06-12T22:09:35.437+0000] {standard_task_runner.py:63} INFO - Started process 90 to run task
+[2026-06-12T22:09:35.433+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dag_incremental', 'fetch_incremental', 'scheduled__2026-06-12T21:00:00+00:00', '--job-id', '29', '--raw', '--subdir', 'DAGS_FOLDER/dag_incremental.py', '--cfg-path', '/tmp/tmp4bv70gxq']
+[2026-06-12T22:09:35.471+0000] {standard_task_runner.py:91} INFO - Job 29: Subtask fetch_incremental
+[2026-06-12T22:09:35.919+0000] {task_command.py:426} INFO - Running <TaskInstance: dag_incremental.fetch_incremental scheduled__2026-06-12T21:00:00+00:00 [running]> on host 1fca64daf2a8
+[2026-06-12T22:09:37.370+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dag_incremental' AIRFLOW_CTX_TASK_ID='fetch_incremental' AIRFLOW_CTX_EXECUTION_DATE='2026-06-12T21:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-12T21:00:00+00:00'
+[2026-06-12T22:09:37.475+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-06-12T22:09:42.863+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-06-12T22:09:42.870+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_incremental.py", line 77, in fetch_incremental
+    last_open_time = get_last_timestamp(bucket, symbol)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_incremental.py", line 53, in get_last_timestamp
+    os.remove(local_path)
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/staging/_check_BTCUSDT.parquet'
+[2026-06-12T22:09:43.085+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=dag_incremental, task_id=fetch_incremental, run_id=scheduled__2026-06-12T21:00:00+00:00, execution_date=20260612T210000, start_date=20260612T220934, end_date=20260612T220943
+[2026-06-12T22:09:43.521+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 29 for task fetch_incremental ([Errno 2] No such file or directory: '/tmp/staging/_check_BTCUSDT.parquet'; 90)
+[2026-06-12T22:09:43.767+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2026-06-12T22:09:43.916+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-06-12T22:09:43.929+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

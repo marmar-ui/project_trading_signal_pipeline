@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: bronze
+    database: crypto-trading-signal-498920
+    schema: crypto_trading
+    tables:
+      - name: bronze_ohlcv

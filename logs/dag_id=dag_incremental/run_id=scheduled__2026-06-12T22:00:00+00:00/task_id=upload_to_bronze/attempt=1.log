@@ -1,0 +1,60 @@
+[2026-06-12T23:00:13.455+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-06-12T23:00:13.484+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_incremental.upload_to_bronze scheduled__2026-06-12T22:00:00+00:00 [queued]>
+[2026-06-12T23:00:13.490+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_incremental.upload_to_bronze scheduled__2026-06-12T22:00:00+00:00 [queued]>
+[2026-06-12T23:00:13.490+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 4
+[2026-06-12T23:00:13.504+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): upload_to_bronze> on 2026-06-12 22:00:00+00:00
+[2026-06-12T23:00:13.516+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=721) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-06-12T23:00:13.519+0000] {standard_task_runner.py:63} INFO - Started process 723 to run task
+[2026-06-12T23:00:13.519+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dag_incremental', 'upload_to_bronze', 'scheduled__2026-06-12T22:00:00+00:00', '--job-id', '34', '--raw', '--subdir', 'DAGS_FOLDER/dag_incremental.py', '--cfg-path', '/tmp/tmpukfxz0za']
+[2026-06-12T23:00:13.521+0000] {standard_task_runner.py:91} INFO - Job 34: Subtask upload_to_bronze
+[2026-06-12T23:00:13.583+0000] {task_command.py:426} INFO - Running <TaskInstance: dag_incremental.upload_to_bronze scheduled__2026-06-12T22:00:00+00:00 [running]> on host 1fca64daf2a8
+[2026-06-12T23:00:13.729+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dag_incremental' AIRFLOW_CTX_TASK_ID='upload_to_bronze' AIRFLOW_CTX_EXECUTION_DATE='2026-06-12T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-12T22:00:00+00:00'
+[2026-06-12T23:00:13.730+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-06-12T23:00:14.145+0000] {logging_mixin.py:188} INFO - Downloaded ADAUSDT_incremental_20260612_2300.json from staging
+[2026-06-12T23:00:14.245+0000] {logging_mixin.py:188} INFO - Uploaded ADAUSDT_incremental_20260612_2300.parquet to gs://crypto-trading-signal-pipeline/bronze/ohlcv/ADAUSDT_incremental_20260612_2300.parquet
+[2026-06-12T23:00:14.310+0000] {logging_mixin.py:188} INFO - Deleted staging file: staging/ohlcv/ADAUSDT_incremental_20260612_2300.json
+[2026-06-12T23:00:14.310+0000] {logging_mixin.py:188} INFO - Cleaned up local temp: ADAUSDT_incremental_20260612_2300.json, ADAUSDT_incremental_20260612_2300.parquet
+[2026-06-12T23:00:14.366+0000] {logging_mixin.py:188} INFO - Downloaded AVAXUSDT_incremental_20260612_2300.json from staging
+[2026-06-12T23:00:14.444+0000] {logging_mixin.py:188} INFO - Uploaded AVAXUSDT_incremental_20260612_2300.parquet to gs://crypto-trading-signal-pipeline/bronze/ohlcv/AVAXUSDT_incremental_20260612_2300.parquet
+[2026-06-12T23:00:14.493+0000] {logging_mixin.py:188} INFO - Deleted staging file: staging/ohlcv/AVAXUSDT_incremental_20260612_2300.json
+[2026-06-12T23:00:14.493+0000] {logging_mixin.py:188} INFO - Cleaned up local temp: AVAXUSDT_incremental_20260612_2300.json, AVAXUSDT_incremental_20260612_2300.parquet
+[2026-06-12T23:00:14.565+0000] {logging_mixin.py:188} INFO - Downloaded BNBUSDT_incremental_20260612_2300.json from staging
+[2026-06-12T23:00:14.637+0000] {logging_mixin.py:188} INFO - Uploaded BNBUSDT_incremental_20260612_2300.parquet to gs://crypto-trading-signal-pipeline/bronze/ohlcv/BNBUSDT_incremental_20260612_2300.parquet
+[2026-06-12T23:00:14.695+0000] {logging_mixin.py:188} INFO - Deleted staging file: staging/ohlcv/BNBUSDT_incremental_20260612_2300.json
+[2026-06-12T23:00:14.695+0000] {logging_mixin.py:188} INFO - Cleaned up local temp: BNBUSDT_incremental_20260612_2300.json, BNBUSDT_incremental_20260612_2300.parquet
+[2026-06-12T23:00:14.754+0000] {logging_mixin.py:188} INFO - Downloaded BTCUSDT_incremental_20260612_2300.json from staging
+[2026-06-12T23:00:14.831+0000] {logging_mixin.py:188} INFO - Uploaded BTCUSDT_incremental_20260612_2300.parquet to gs://crypto-trading-signal-pipeline/bronze/ohlcv/BTCUSDT_incremental_20260612_2300.parquet
+[2026-06-12T23:00:14.879+0000] {logging_mixin.py:188} INFO - Deleted staging file: staging/ohlcv/BTCUSDT_incremental_20260612_2300.json
+[2026-06-12T23:00:14.880+0000] {logging_mixin.py:188} INFO - Cleaned up local temp: BTCUSDT_incremental_20260612_2300.json, BTCUSDT_incremental_20260612_2300.parquet
+[2026-06-12T23:00:14.939+0000] {logging_mixin.py:188} INFO - Downloaded DOGEUSDT_incremental_20260612_2300.json from staging
+[2026-06-12T23:00:15.008+0000] {logging_mixin.py:188} INFO - Uploaded DOGEUSDT_incremental_20260612_2300.parquet to gs://crypto-trading-signal-pipeline/bronze/ohlcv/DOGEUSDT_incremental_20260612_2300.parquet
+[2026-06-12T23:00:15.059+0000] {logging_mixin.py:188} INFO - Deleted staging file: staging/ohlcv/DOGEUSDT_incremental_20260612_2300.json
+[2026-06-12T23:00:15.060+0000] {logging_mixin.py:188} INFO - Cleaned up local temp: DOGEUSDT_incremental_20260612_2300.json, DOGEUSDT_incremental_20260612_2300.parquet
+[2026-06-12T23:00:15.123+0000] {logging_mixin.py:188} INFO - Downloaded ETHUSDT_incremental_20260612_2300.json from staging
+[2026-06-12T23:00:15.198+0000] {logging_mixin.py:188} INFO - Uploaded ETHUSDT_incremental_20260612_2300.parquet to gs://crypto-trading-signal-pipeline/bronze/ohlcv/ETHUSDT_incremental_20260612_2300.parquet
+[2026-06-12T23:00:15.247+0000] {logging_mixin.py:188} INFO - Deleted staging file: staging/ohlcv/ETHUSDT_incremental_20260612_2300.json
+[2026-06-12T23:00:15.247+0000] {logging_mixin.py:188} INFO - Cleaned up local temp: ETHUSDT_incremental_20260612_2300.json, ETHUSDT_incremental_20260612_2300.parquet
+[2026-06-12T23:00:15.317+0000] {logging_mixin.py:188} INFO - Downloaded LINKUSDT_incremental_20260612_2300.json from staging
+[2026-06-12T23:00:15.384+0000] {logging_mixin.py:188} INFO - Uploaded LINKUSDT_incremental_20260612_2300.parquet to gs://crypto-trading-signal-pipeline/bronze/ohlcv/LINKUSDT_incremental_20260612_2300.parquet
+[2026-06-12T23:00:15.430+0000] {logging_mixin.py:188} INFO - Deleted staging file: staging/ohlcv/LINKUSDT_incremental_20260612_2300.json
+[2026-06-12T23:00:15.430+0000] {logging_mixin.py:188} INFO - Cleaned up local temp: LINKUSDT_incremental_20260612_2300.json, LINKUSDT_incremental_20260612_2300.parquet
+[2026-06-12T23:00:15.487+0000] {logging_mixin.py:188} INFO - Downloaded LTCUSDT_incremental_20260612_2300.json from staging
+[2026-06-12T23:00:15.565+0000] {logging_mixin.py:188} INFO - Uploaded LTCUSDT_incremental_20260612_2300.parquet to gs://crypto-trading-signal-pipeline/bronze/ohlcv/LTCUSDT_incremental_20260612_2300.parquet
+[2026-06-12T23:00:15.619+0000] {logging_mixin.py:188} INFO - Deleted staging file: staging/ohlcv/LTCUSDT_incremental_20260612_2300.json
+[2026-06-12T23:00:15.620+0000] {logging_mixin.py:188} INFO - Cleaned up local temp: LTCUSDT_incremental_20260612_2300.json, LTCUSDT_incremental_20260612_2300.parquet
+[2026-06-12T23:00:15.673+0000] {logging_mixin.py:188} INFO - Downloaded SOLUSDT_incremental_20260612_2300.json from staging
+[2026-06-12T23:00:15.760+0000] {logging_mixin.py:188} INFO - Uploaded SOLUSDT_incremental_20260612_2300.parquet to gs://crypto-trading-signal-pipeline/bronze/ohlcv/SOLUSDT_incremental_20260612_2300.parquet
+[2026-06-12T23:00:15.810+0000] {logging_mixin.py:188} INFO - Deleted staging file: staging/ohlcv/SOLUSDT_incremental_20260612_2300.json
+[2026-06-12T23:00:15.810+0000] {logging_mixin.py:188} INFO - Cleaned up local temp: SOLUSDT_incremental_20260612_2300.json, SOLUSDT_incremental_20260612_2300.parquet
+[2026-06-12T23:00:15.879+0000] {logging_mixin.py:188} INFO - Downloaded XRPUSDT_incremental_20260612_2300.json from staging
+[2026-06-12T23:00:15.949+0000] {logging_mixin.py:188} INFO - Uploaded XRPUSDT_incremental_20260612_2300.parquet to gs://crypto-trading-signal-pipeline/bronze/ohlcv/XRPUSDT_incremental_20260612_2300.parquet
+[2026-06-12T23:00:15.997+0000] {logging_mixin.py:188} INFO - Deleted staging file: staging/ohlcv/XRPUSDT_incremental_20260612_2300.json
+[2026-06-12T23:00:15.998+0000] {logging_mixin.py:188} INFO - Cleaned up local temp: XRPUSDT_incremental_20260612_2300.json, XRPUSDT_incremental_20260612_2300.parquet
+[2026-06-12T23:00:15.998+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-06-12T23:00:15.998+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-06-12T23:00:16.009+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=dag_incremental, task_id=upload_to_bronze, run_id=scheduled__2026-06-12T22:00:00+00:00, execution_date=20260612T220000, start_date=20260612T230013, end_date=20260612T230016
+[2026-06-12T23:00:16.083+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-06-12T23:00:16.124+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-06-12T23:00:16.129+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
