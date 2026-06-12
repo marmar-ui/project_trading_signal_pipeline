@@ -1146,3 +1146,206 @@
 [2026-06-12T23:03:12.436+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:03:12.436+0000] {dag.py:3096} INFO - Sync 1 DAGs
 [2026-06-12T23:03:12.455+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:03:12.455+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
 [2026-06-12T23:03:12.472+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 0.707 seconds
+[2026-06-12T23:03:43.167+0000] {processor.py:161} INFO - Started process (PID=6637) to work on /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:03:43.169+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_incremental.py for tasks to queue
+[2026-06-12T23:03:43.171+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:03:43.171+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:03:44.604+0000] {processor.py:840} INFO - DAG(s) 'dag_incremental' retrieved from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:03:44.629+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:03:44.628+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-12T23:03:44.655+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:03:44.655+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
+[2026-06-12T23:03:44.677+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 1.517 seconds
+[2026-06-12T23:04:14.852+0000] {processor.py:161} INFO - Started process (PID=6703) to work on /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:04:14.853+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_incremental.py for tasks to queue
+[2026-06-12T23:04:14.855+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:04:14.854+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:04:15.485+0000] {processor.py:840} INFO - DAG(s) 'dag_incremental' retrieved from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:04:15.502+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:04:15.501+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-12T23:04:15.522+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:04:15.522+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
+[2026-06-12T23:04:15.536+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 0.691 seconds
+[2026-06-12T23:04:45.592+0000] {processor.py:161} INFO - Started process (PID=6767) to work on /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:04:45.592+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_incremental.py for tasks to queue
+[2026-06-12T23:04:45.594+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:04:45.594+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:04:46.073+0000] {processor.py:840} INFO - DAG(s) 'dag_incremental' retrieved from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:04:46.085+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:04:46.085+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-12T23:04:46.102+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:04:46.102+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
+[2026-06-12T23:04:46.116+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 0.529 seconds
+[2026-06-12T23:05:16.440+0000] {processor.py:161} INFO - Started process (PID=6826) to work on /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:05:16.441+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_incremental.py for tasks to queue
+[2026-06-12T23:05:16.444+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:05:16.443+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:05:17.387+0000] {processor.py:840} INFO - DAG(s) 'dag_incremental' retrieved from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:05:17.400+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:05:17.400+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-12T23:05:17.422+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:05:17.421+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
+[2026-06-12T23:05:17.438+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 1.005 seconds
+[2026-06-12T23:05:47.880+0000] {processor.py:161} INFO - Started process (PID=6892) to work on /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:05:47.881+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_incremental.py for tasks to queue
+[2026-06-12T23:05:47.885+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:05:47.885+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:05:49.039+0000] {processor.py:840} INFO - DAG(s) 'dag_incremental' retrieved from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:05:49.059+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:05:49.057+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-12T23:05:49.089+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:05:49.089+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
+[2026-06-12T23:05:49.177+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 1.312 seconds
+[2026-06-12T23:06:19.852+0000] {processor.py:161} INFO - Started process (PID=6955) to work on /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:06:19.853+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_incremental.py for tasks to queue
+[2026-06-12T23:06:19.855+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:06:19.855+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:06:21.162+0000] {processor.py:840} INFO - DAG(s) 'dag_incremental' retrieved from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:06:21.190+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:06:21.189+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-12T23:06:21.252+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:06:21.252+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
+[2026-06-12T23:06:21.542+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 1.696 seconds
+[2026-06-12T23:06:52.072+0000] {processor.py:161} INFO - Started process (PID=7021) to work on /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:06:52.075+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_incremental.py for tasks to queue
+[2026-06-12T23:06:52.080+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:06:52.080+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:06:53.426+0000] {processor.py:840} INFO - DAG(s) 'dag_incremental' retrieved from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:06:53.451+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:06:53.451+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-12T23:06:53.479+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:06:53.479+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
+[2026-06-12T23:06:53.500+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 1.444 seconds
+[2026-06-12T23:07:23.956+0000] {processor.py:161} INFO - Started process (PID=7085) to work on /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:07:23.958+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_incremental.py for tasks to queue
+[2026-06-12T23:07:23.961+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:07:23.960+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:07:24.862+0000] {processor.py:840} INFO - DAG(s) 'dag_incremental' retrieved from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:07:24.884+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:07:24.883+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-12T23:07:24.907+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:07:24.906+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
+[2026-06-12T23:07:24.923+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 0.973 seconds
+[2026-06-12T23:07:55.819+0000] {processor.py:161} INFO - Started process (PID=7152) to work on /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:07:55.827+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_incremental.py for tasks to queue
+[2026-06-12T23:07:55.839+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:07:55.837+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:07:56.881+0000] {processor.py:840} INFO - DAG(s) 'dag_incremental' retrieved from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:07:56.898+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:07:56.898+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-12T23:07:56.921+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:07:56.920+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
+[2026-06-12T23:07:56.939+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 1.194 seconds
+[2026-06-12T23:08:27.390+0000] {processor.py:161} INFO - Started process (PID=7217) to work on /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:08:27.392+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_incremental.py for tasks to queue
+[2026-06-12T23:08:27.394+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:08:27.394+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:08:27.997+0000] {processor.py:840} INFO - DAG(s) 'dag_incremental' retrieved from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:08:28.021+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:08:28.020+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-12T23:08:28.068+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:08:28.067+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
+[2026-06-12T23:08:28.095+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 0.711 seconds
+[2026-06-12T23:08:58.271+0000] {processor.py:161} INFO - Started process (PID=7279) to work on /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:08:58.272+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_incremental.py for tasks to queue
+[2026-06-12T23:08:58.274+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:08:58.274+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:08:58.865+0000] {processor.py:840} INFO - DAG(s) 'dag_incremental' retrieved from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:08:58.878+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:08:58.877+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-12T23:08:58.894+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:08:58.894+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
+[2026-06-12T23:08:58.907+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 0.642 seconds
+[2026-06-12T23:09:29.313+0000] {processor.py:161} INFO - Started process (PID=7341) to work on /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:09:29.314+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_incremental.py for tasks to queue
+[2026-06-12T23:09:29.317+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:09:29.316+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:09:30.217+0000] {processor.py:840} INFO - DAG(s) 'dag_incremental' retrieved from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:09:30.234+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:09:30.233+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-12T23:09:30.251+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:09:30.250+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
+[2026-06-12T23:09:30.266+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 0.961 seconds
+[2026-06-12T23:10:00.568+0000] {processor.py:161} INFO - Started process (PID=7406) to work on /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:10:00.569+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_incremental.py for tasks to queue
+[2026-06-12T23:10:00.571+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:10:00.571+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:10:01.119+0000] {processor.py:840} INFO - DAG(s) 'dag_incremental' retrieved from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:10:01.141+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:10:01.140+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-12T23:10:01.170+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:10:01.170+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
+[2026-06-12T23:10:01.188+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 0.625 seconds
+[2026-06-12T23:10:31.428+0000] {processor.py:161} INFO - Started process (PID=7465) to work on /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:10:31.429+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_incremental.py for tasks to queue
+[2026-06-12T23:10:31.431+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:10:31.431+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:10:32.190+0000] {processor.py:840} INFO - DAG(s) 'dag_incremental' retrieved from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:10:32.212+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:10:32.212+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-12T23:10:32.241+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:10:32.241+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
+[2026-06-12T23:10:32.283+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 0.862 seconds
+[2026-06-12T23:11:02.574+0000] {processor.py:161} INFO - Started process (PID=7533) to work on /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:11:02.583+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_incremental.py for tasks to queue
+[2026-06-12T23:11:02.587+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:11:02.587+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:11:04.350+0000] {processor.py:840} INFO - DAG(s) 'dag_incremental' retrieved from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:11:04.391+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:11:04.389+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-12T23:11:04.444+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:11:04.443+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
+[2026-06-12T23:11:04.478+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 1.921 seconds
+[2026-06-12T23:11:34.690+0000] {processor.py:161} INFO - Started process (PID=7598) to work on /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:11:34.690+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_incremental.py for tasks to queue
+[2026-06-12T23:11:34.692+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:11:34.692+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:11:36.252+0000] {processor.py:840} INFO - DAG(s) 'dag_incremental' retrieved from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:11:36.275+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:11:36.274+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-12T23:11:36.303+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:11:36.303+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
+[2026-06-12T23:11:36.319+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 1.643 seconds
+[2026-06-12T23:12:06.441+0000] {processor.py:161} INFO - Started process (PID=7661) to work on /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:12:06.442+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_incremental.py for tasks to queue
+[2026-06-12T23:12:06.443+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:12:06.443+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:12:07.214+0000] {processor.py:840} INFO - DAG(s) 'dag_incremental' retrieved from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:12:07.235+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:12:07.235+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-12T23:12:07.255+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:12:07.254+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
+[2026-06-12T23:12:07.269+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 0.843 seconds
+[2026-06-12T23:12:38.208+0000] {processor.py:161} INFO - Started process (PID=7723) to work on /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:12:38.212+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_incremental.py for tasks to queue
+[2026-06-12T23:12:38.216+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:12:38.216+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:12:39.020+0000] {processor.py:840} INFO - DAG(s) 'dag_incremental' retrieved from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:12:39.036+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:12:39.035+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-12T23:12:39.054+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:12:39.053+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
+[2026-06-12T23:12:39.067+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 0.865 seconds
+[2026-06-12T23:13:09.837+0000] {processor.py:161} INFO - Started process (PID=7786) to work on /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:13:09.838+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_incremental.py for tasks to queue
+[2026-06-12T23:13:09.840+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:13:09.839+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:13:10.816+0000] {processor.py:840} INFO - DAG(s) 'dag_incremental' retrieved from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:13:10.842+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:13:10.841+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-12T23:13:10.874+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:13:10.874+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
+[2026-06-12T23:13:10.898+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 1.070 seconds
+[2026-06-12T23:13:41.063+0000] {processor.py:161} INFO - Started process (PID=7848) to work on /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:13:41.064+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_incremental.py for tasks to queue
+[2026-06-12T23:13:41.066+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:13:41.066+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:13:41.848+0000] {processor.py:840} INFO - DAG(s) 'dag_incremental' retrieved from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:13:41.873+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:13:41.872+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-12T23:13:41.898+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:13:41.898+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
+[2026-06-12T23:13:41.922+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 0.865 seconds
+[2026-06-12T23:14:11.996+0000] {processor.py:161} INFO - Started process (PID=7911) to work on /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:14:11.997+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_incremental.py for tasks to queue
+[2026-06-12T23:14:12.000+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:14:11.999+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:14:12.776+0000] {processor.py:840} INFO - DAG(s) 'dag_incremental' retrieved from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:14:12.796+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:14:12.796+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-12T23:14:12.822+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:14:12.821+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
+[2026-06-12T23:14:12.847+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 0.858 seconds
+[2026-06-12T23:14:43.372+0000] {processor.py:161} INFO - Started process (PID=7975) to work on /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:14:43.373+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_incremental.py for tasks to queue
+[2026-06-12T23:14:43.375+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:14:43.375+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:14:44.052+0000] {processor.py:840} INFO - DAG(s) 'dag_incremental' retrieved from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:14:44.066+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:14:44.066+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-12T23:14:44.083+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:14:44.083+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
+[2026-06-12T23:14:44.097+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 0.734 seconds
+[2026-06-12T23:15:14.357+0000] {processor.py:161} INFO - Started process (PID=8039) to work on /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:15:14.360+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_incremental.py for tasks to queue
+[2026-06-12T23:15:14.364+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:15:14.363+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:15:15.463+0000] {processor.py:840} INFO - DAG(s) 'dag_incremental' retrieved from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:15:15.559+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:15:15.555+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-12T23:15:15.721+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:15:15.718+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
+[2026-06-12T23:15:15.771+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 1.429 seconds
+[2026-06-12T23:15:46.169+0000] {processor.py:161} INFO - Started process (PID=8101) to work on /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:15:46.179+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_incremental.py for tasks to queue
+[2026-06-12T23:15:46.187+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:15:46.182+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:15:47.414+0000] {processor.py:840} INFO - DAG(s) 'dag_incremental' retrieved from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:15:47.493+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:15:47.493+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-12T23:15:47.538+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:15:47.538+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
+[2026-06-12T23:15:47.586+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 1.444 seconds
+[2026-06-12T23:16:17.886+0000] {processor.py:161} INFO - Started process (PID=8162) to work on /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:16:17.887+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_incremental.py for tasks to queue
+[2026-06-12T23:16:17.889+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:16:17.888+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:16:18.893+0000] {processor.py:840} INFO - DAG(s) 'dag_incremental' retrieved from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:16:18.911+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:16:18.910+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-12T23:16:18.936+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:16:18.935+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
+[2026-06-12T23:16:18.960+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 1.081 seconds
+[2026-06-12T23:16:49.603+0000] {processor.py:161} INFO - Started process (PID=8227) to work on /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:16:49.603+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_incremental.py for tasks to queue
+[2026-06-12T23:16:49.605+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:16:49.605+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:16:50.257+0000] {processor.py:840} INFO - DAG(s) 'dag_incremental' retrieved from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:16:50.272+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:16:50.271+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-12T23:16:50.289+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:16:50.289+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
+[2026-06-12T23:16:50.306+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 0.710 seconds
+[2026-06-12T23:17:20.456+0000] {processor.py:161} INFO - Started process (PID=8293) to work on /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:17:20.459+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_incremental.py for tasks to queue
+[2026-06-12T23:17:20.462+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:17:20.461+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:17:21.011+0000] {processor.py:840} INFO - DAG(s) 'dag_incremental' retrieved from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:17:21.044+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:17:21.044+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-12T23:17:21.091+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:17:21.091+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
+[2026-06-12T23:17:21.123+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 0.675 seconds
+[2026-06-12T23:17:51.313+0000] {processor.py:161} INFO - Started process (PID=8355) to work on /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:17:51.314+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_incremental.py for tasks to queue
+[2026-06-12T23:17:51.315+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:17:51.315+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:17:51.843+0000] {processor.py:840} INFO - DAG(s) 'dag_incremental' retrieved from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:17:51.896+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:17:51.895+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-12T23:17:51.938+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:17:51.936+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
+[2026-06-12T23:17:51.975+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 0.669 seconds
+[2026-06-12T23:18:22.491+0000] {processor.py:161} INFO - Started process (PID=8417) to work on /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:18:22.503+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_incremental.py for tasks to queue
+[2026-06-12T23:18:22.512+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:18:22.512+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:18:23.663+0000] {processor.py:840} INFO - DAG(s) 'dag_incremental' retrieved from /opt/airflow/dags/dag_incremental.py
+[2026-06-12T23:18:23.684+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:18:23.683+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-06-12T23:18:23.708+0000] {logging_mixin.py:188} INFO - [2026-06-12T23:18:23.708+0000] {dag.py:3954} INFO - Setting next_dagrun for dag_incremental to 2026-06-12 23:00:00+00:00, run_after=2026-06-13 00:00:00+00:00
+[2026-06-12T23:18:23.730+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_incremental.py took 1.268 seconds
