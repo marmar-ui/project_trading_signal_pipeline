@@ -12,7 +12,7 @@ COINS = [
 ]
 
 BINANCE_URL = "https://api.binance.com/api/v3/klines"
-LOCAL_TEMP_PATH = "/tmp/incremental"
+LOCAL_TEMP_PATH = "/tmp/daily_backup"
 GCS_BUCKET = "crypto-trading-signal-pipeline"
 GCS_BRONZE_PATH = "bronze/ohlcv"
 CREDENTIALS_PATH = "/opt/airflow/config/gcp-credentials.json"
@@ -30,10 +30,12 @@ default_args = {
 }
 
 
-def fetch_and_upload_incremental(**context):
+def fetch_and_upload_daily_backup(**context):
     """
-    Fetch OHLCV 1 jam terakhir dari Binance API,
+    Fetch OHLCV 24 jam terakhir dari Binance API,
     langsung convert ke Parquet dan upload ke GCS Bronze.
+    Berfungsi sebagai safety net jika dag_incremental error.
+    Dedup akan dilakukan di Silver layer (dbt).
     """
     os.makedirs(LOCAL_TEMP_PATH, exist_ok=True)
 
@@ -42,27 +44,37 @@ def fetch_and_upload_incremental(**context):
 
     execution_time = context["execution_date"]
     end_ms = int(execution_time.timestamp() * 1000)
-    start_ms = int((execution_time - timedelta(hours=1)).timestamp() * 1000)
+    start_ms = int((execution_time - timedelta(hours=24)).timestamp() * 1000)
     timestamp_str = execution_time.strftime("%Y%m%d_%H%M")
 
     for symbol in COINS:
-        params = {
-            "symbol": symbol,
-            "interval": "1h",
-            "startTime": start_ms,
-            "endTime": end_ms,
-            "limit": 1
-        }
-        response = requests.get(BINANCE_URL, params=params)
-        data = response.json()
+        all_data = []
+        current_start = start_ms
 
-        if not data:
+        while current_start < end_ms:
+            params = {
+                "symbol": symbol,
+                "interval": "1h",
+                "startTime": current_start,
+                "endTime": end_ms,
+                "limit": 1000
+            }
+            response = requests.get(BINANCE_URL, params=params)
+            batch = response.json()
+
+            if not batch:
+                break
+
+            all_data.extend(batch)
+            current_start = batch[-1][0] + 3600000
+
+        if not all_data:
             print(f"{symbol}: no data returned, skipping")
             continue
 
         # Convert langsung ke Parquet
-        df = pd.DataFrame(data, columns=COLUMNS)
-        parquet_filename = f"{symbol}_incremental_{timestamp_str}.parquet"
+        df = pd.DataFrame(all_data, columns=COLUMNS)
+        parquet_filename = f"{symbol}_daily_backup_{timestamp_str}.parquet"
         local_path = f"{LOCAL_TEMP_PATH}/{parquet_filename}"
         df.to_parquet(local_path, index=False)
 
@@ -70,23 +82,23 @@ def fetch_and_upload_incremental(**context):
         gcs_path = f"{GCS_BRONZE_PATH}/{parquet_filename}"
         blob = bucket.blob(gcs_path)
         blob.upload_from_filename(local_path)
-        print(f"{symbol}: uploaded {parquet_filename} to Bronze")
+        print(f"{symbol}: uploaded {parquet_filename} to Bronze ({len(all_data)} candles)")
 
         # Hapus local temp
         os.remove(local_path)
 
 
 with DAG(
-    dag_id="dag_incremental",
+    dag_id="dag_daily_backup",
     default_args=default_args,
-    description="Incremental fetch OHLCV 1 jam terakhir dari Binance API",
-    schedule_interval="@hourly",
+    description="Daily backup OHLCV 24 jam terakhir sebagai safety net",
+    schedule_interval="@daily",
     start_date=datetime(2026, 6, 1),
     catchup=False,
-    tags=["binance", "incremental"],
+    tags=["binance", "backup"],
 ) as dag:
 
     fetch_upload_task = PythonOperator(
         task_id="fetch_and_upload_to_bronze",
-        python_callable=fetch_and_upload_incremental,
+        python_callable=fetch_and_upload_daily_backup,
     )

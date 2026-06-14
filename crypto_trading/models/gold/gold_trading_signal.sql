@@ -95,7 +95,7 @@ final AS (
         END                                     AS signal
 
     FROM with_signals
-    WHERE ma20 IS NOT NULL
+
 )
 
 SELECT * FROM final

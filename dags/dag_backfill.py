@@ -13,9 +13,8 @@ COINS = [
 ]
 
 BINANCE_URL = "https://api.binance.com/api/v3/klines"
-LOCAL_TEMP_PATH = "/tmp/staging"
+LOCAL_TEMP_PATH = "/tmp/backfill"
 GCS_BUCKET = "crypto-trading-signal-pipeline"
-GCS_STAGING_PATH = "staging/ohlcv"
 GCS_BRONZE_PATH = "bronze/ohlcv"
 CREDENTIALS_PATH = "/opt/airflow/config/gcp-credentials.json"
 
@@ -32,10 +31,11 @@ default_args = {
 }
 
 
-def fetch_backfill(**context):
+def fetch_and_upload_backfill(**context):
     """
-    Fetch OHLCV 1 year dari Binance API
-    lalu upload raw JSON ke GCS Staging.
+    Fetch OHLCV 1 tahun dari Binance API,
+    langsung convert ke Parquet dan upload ke GCS Bronze.
+    Tidak ada staging layer.
     """
     os.makedirs(LOCAL_TEMP_PATH, exist_ok=True)
 
@@ -69,76 +69,22 @@ def fetch_backfill(**context):
             current_start = batch[-1][0] + 3600000
             print(f"{symbol}: fetched {len(all_data)} candles so far")
 
-        # Simpan ke local temp dulu
+        # Convert langsung ke Parquet
+        df = pd.DataFrame(all_data, columns=COLUMNS)
         timestamp_str = datetime.utcnow().strftime("%Y%m%d_%H%M")
-        local_filename = f"{symbol}_backfill_{timestamp_str}.json"
-        local_path = f"{LOCAL_TEMP_PATH}/{local_filename}"
+        parquet_filename = f"{symbol}_backfill_{timestamp_str}.parquet"
+        local_path = f"{LOCAL_TEMP_PATH}/{parquet_filename}"
+        df.to_parquet(local_path, index=False)
 
-        with open(local_path, "w") as f:
-            json.dump(all_data, f)
-
-        # Upload JSON ke GCS Staging
-        gcs_path = f"{GCS_STAGING_PATH}/{local_filename}"
+        # Upload langsung ke Bronze
+        gcs_path = f"{GCS_BRONZE_PATH}/{parquet_filename}"
         blob = bucket.blob(gcs_path)
         blob.upload_from_filename(local_path)
-        print(f"{symbol}: uploaded to gs://{GCS_BUCKET}/{gcs_path}")
+        print(f"{symbol}: uploaded {parquet_filename} to Bronze")
 
         # Hapus local temp
         os.remove(local_path)
-        print(f"{symbol}: total {len(all_data)} candles, staging done")
-
-
-def upload_to_bronze(**context):
-    """
-    Baca raw JSON dari GCS Staging,
-    convert ke Parquet, upload ke GCS Bronze,
-    lalu hapus file staging.
-    """
-    client = storage.Client.from_service_account_json(CREDENTIALS_PATH)
-    bucket = client.bucket(GCS_BUCKET)
-
-    os.makedirs(LOCAL_TEMP_PATH, exist_ok=True)
-
-    blobs = list(bucket.list_blobs(prefix=GCS_STAGING_PATH + "/"))
-
-    if not blobs:
-        print("No files found in staging. Skipping.")
-        return
-
-    for blob in blobs:
-        filename = blob.name.split("/")[-1]
-        if not filename.endswith(".json"):
-            continue
-
-        # Download dari GCS Staging ke local temp
-        local_json_path = f"{LOCAL_TEMP_PATH}/{filename}"
-        blob.download_to_filename(local_json_path)
-        print(f"Downloaded {filename} from staging")
-
-        # Convert JSON -> Parquet
-        with open(local_json_path, "r") as f:
-            data = json.load(f)
-
-        df = pd.DataFrame(data, columns=COLUMNS)
-
-        parquet_filename = filename.replace(".json", ".parquet")
-        local_parquet_path = f"{LOCAL_TEMP_PATH}/{parquet_filename}"
-        df.to_parquet(local_parquet_path, index=False)
-
-        # Upload Parquet ke GCS Bronze
-        gcs_bronze_path = f"{GCS_BRONZE_PATH}/{parquet_filename}"
-        bronze_blob = bucket.blob(gcs_bronze_path)
-        bronze_blob.upload_from_filename(local_parquet_path)
-        print(f"Uploaded {parquet_filename} to gs://{GCS_BUCKET}/{gcs_bronze_path}")
-
-        # Hapus file di GCS Staging
-        blob.delete()
-        print(f"Deleted staging file: {blob.name}")
-
-        # Hapus local temp
-        os.remove(local_json_path)
-        os.remove(local_parquet_path)
-        print(f"Cleaned up local temp: {filename}, {parquet_filename}")
+        print(f"{symbol}: total {len(all_data)} candles done")
 
 
 with DAG(
@@ -151,14 +97,7 @@ with DAG(
     tags=["binance", "backfill"],
 ) as dag:
 
-    fetch_task = PythonOperator(
-        task_id="fetch_backfill",
-        python_callable=fetch_backfill,
+    fetch_upload_task = PythonOperator(
+        task_id="fetch_and_upload_to_bronze",
+        python_callable=fetch_and_upload_backfill,
     )
-
-    upload_task = PythonOperator(
-        task_id="upload_to_bronze",
-        python_callable=upload_to_bronze,
-    )
-
-    fetch_task >> upload_task
