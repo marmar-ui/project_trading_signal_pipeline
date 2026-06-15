@@ -61,6 +61,26 @@ with_signals AS (
     FROM with_zscore
 ),
 
+with_forward_returns AS (
+    SELECT
+        *,
+        -- Harga 7 jam ke depan
+        LEAD(close, 7) OVER (
+            PARTITION BY symbol ORDER BY open_time
+        ) AS price_after_7h,
+        
+        -- Harga 24 jam ke depan (1 hari)
+        LEAD(close, 24) OVER (
+            PARTITION BY symbol ORDER BY open_time
+        ) AS price_after_24h,
+        
+        -- Harga 168 jam ke depan (7 hari / 1 minggu)
+        LEAD(close, 168) OVER (
+            PARTITION BY symbol ORDER BY open_time
+        ) AS price_after_168h
+    FROM with_signals
+),
+
 final AS (
     SELECT
         open_time,
@@ -92,10 +112,24 @@ final AS (
             WHEN prev_ma7 < prev_ma20 AND ma7 > ma20 THEN 'BUY'
             WHEN prev_ma7 > prev_ma20 AND ma7 < ma20 THEN 'SELL'
             ELSE 'HOLD'
-        END                                     AS signal
+        END                                     AS signal,
 
-    FROM with_signals
+        -- Forward prices (bisa NULL di akhir dataset)
+        price_after_7h,
+        price_after_24h,
+        price_after_168h,
 
+        -- Return persen untuk berbagai horizon
+        ROUND(SAFE_DIVIDE(price_after_7h - close, close) * 100, 4)   AS return_pct_7h,
+        ROUND(SAFE_DIVIDE(price_after_24h - close, close) * 100, 4)  AS return_pct_24h,
+        ROUND(SAFE_DIVIDE(price_after_168h - close, close) * 100, 4) AS return_pct_168h,
+
+        -- Flag apakah profit (return positif)
+        (price_after_7h > close)   AS is_profit_7h,
+        (price_after_24h > close)  AS is_profit_24h,
+        (price_after_168h > close) AS is_profit_168h
+
+    FROM with_forward_returns
 )
 
 SELECT * FROM final
